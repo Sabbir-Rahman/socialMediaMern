@@ -6,42 +6,42 @@ export default function Leftbar() {
     return (
         <div className="leftBar">
             <div className="leftbarWrapper">
-                <ul className="sidebarList">
-                    <li className="sidebarListItem">
+                <ul className="leftbarList">
+                    <li className="leftbarListItem">
                         <DynamicFeed className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Feed</span>
+                        <span className="leftbarListItemText">Feed</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <Chat className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Chats</span>
+                        <span className="leftbarListItemText">Chats</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <VideoLibrary className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Videos</span>
+                        <span className="leftbarListItemText">Videos</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <Group className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Groups</span>
+                        <span className="leftbarListItemText">Groups</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <Bookmark className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Bookmarks</span>
+                        <span className="leftbarListItemText">Bookmarks</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <ContactSupport className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Questions</span>
+                        <span className="leftbarListItemText">Questions</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <Work className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Jobs</span>
+                        <span className="leftbarListItemText">Jobs</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <Event className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Events</span>
+                        <span className="leftbarListItemText">Events</span>
                     </li>
-                    <li className="sidebarListItem">
+                    <li className="leftbarListItem">
                         <Book className="leftbarIcon"/>
-                        <span className="sidebarListItemText">Courses</span>
+                        <span className="leftbarListItemText">Courses</span>
                     </li>
                 </ul>
                 <button className="leftbarButton">Show More</button>
@@ -50,7 +50,62 @@ export default function Leftbar() {
                     <li className="leftbarFriend">
                         <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
                         <span className="leftbarFriendName">Sabbir</span>
-                        
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
+                    </li>
+                    <li className="leftbarFriend">
+                        <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
+                        <span className="leftbarFriendName">Sabbir</span>
+
                     </li>
                 </ul>
             </div>

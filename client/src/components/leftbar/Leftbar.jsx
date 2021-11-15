@@ -50,6 +50,7 @@ export default function Leftbar() {
                     <li className="leftbarFriend">
                         <img className="leftbarFriendImg" src="/assets/person/2.jpeg"/>
                         <span className="leftbarFriendName">Sabbir</span>
+                        
                     </li>
                 </ul>
             </div>

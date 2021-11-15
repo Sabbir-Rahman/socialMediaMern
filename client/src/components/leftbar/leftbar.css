@@ -1,0 +1,26 @@
+.leftBar {
+    flex: 3;
+    height: calc(100vh - 50px);
+    
+}
+
+.leftbarWrapper {
+    padding: 20px;
+    background-color: coral;
+}
+
+.sidebarList {
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebarListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20;
+}
+
+.sidebarIcon {
+    margin-right: 15px;
+}

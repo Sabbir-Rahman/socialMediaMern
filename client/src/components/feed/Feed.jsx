@@ -1,6 +1,7 @@
 import React from 'react'
 import "./feed.css"
 import Share from '../share/Share'
+import Post from '../post/Post'
 
 
 export default function Feed() {
@@ -8,6 +9,7 @@ export default function Feed() {
         <div className="feed">
             <div className="feedWrapper">
                 <Share/>
+                <Post/>
             </div>
         </div>
     )

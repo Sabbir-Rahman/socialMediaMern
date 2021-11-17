@@ -13,11 +13,14 @@ export default function Post({post}) {
             <div className="postWrapper">
                 <div className="postTop">
                     <div className="postTopLeft">
-                        <img className="postProfileImg" src="/assets/person/1.jpeg" alt=""/>
+                       
                         {post &&
-                            <span className="postUsername">
+                             <>
+                             <img className="postProfileImg" src={Users.filter((u) => u.id === post?.userId)[0].profilePicture} alt="" />
+                             <span className="postUsername">
                                 {Users.filter((u) => u.id === post?.userId)[0].username}
                             </span>
+                            </>
                         }
                         <span className="postDate">{post?.date}</span>
                     </div>

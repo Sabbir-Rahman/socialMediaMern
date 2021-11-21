@@ -15,6 +15,6 @@ router.put('/likeDislike/:id',likeDislikePost)
 //get a post
 router.get('/view/:id',viewPost)
 //get timeline posts 
-router.get('/timeline',getTimelinePosts)
+router.get('/timeline/:userId',getTimelinePosts)
 
 module.exports = router

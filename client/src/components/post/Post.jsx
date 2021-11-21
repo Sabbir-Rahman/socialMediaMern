@@ -3,6 +3,7 @@ import "./post.css"
 import {MoreVert} from "@material-ui/icons"
 import axios from "axios"
 import {format} from "timeago.js"
+import { Link } from "react-router-dom"
 
 export default function Post({post}) {
     const [like,setLike] = useState(post?.likes.length)
@@ -34,10 +35,12 @@ export default function Post({post}) {
                     <div className="postTopLeft">
                         {post &&
                              <>
-                             <img className="postProfileImg" 
-                             src={user.profilePicture || PF+"person/noAvtar.png"} 
-                             alt="" 
+                             <Link to={`profile/${user.username}`}>
+                                <img className="postProfileImg" 
+                                src={user.profilePicture || PF+"person/noAvtar.png"} 
+                                alt="" 
                              />
+                             </Link>
                              <span className="postUsername">
                                 {user.username}
                             </span>

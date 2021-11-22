@@ -5,19 +5,21 @@ import Post from '../post/Post'
 import { Input } from '@material-ui/core'
 import axios from "axios"
 
-export default function Feed() {
+export default function Feed({username}) {
     
     const [posts,setPosts] = useState([])
     
 
     useEffect(()=> {
        const fetchPosts = async () => {
-            const res = await axios.get("http://localhost:8800/api/v1/posts/timeline/618a7bf4cbd0c677be835c66")
+            const res = username 
+                ? await axios.get("http://localhost:8800/api/v1/posts/profile/" + username)
+                : await axios.get("http://localhost:8800/api/v1/posts/timeline/618a7bf4cbd0c677be835c66")
             setPosts(res.data)
         }
 
        fetchPosts()
-    },[])
+    },[username])
 
     return (
         <div className="feed">

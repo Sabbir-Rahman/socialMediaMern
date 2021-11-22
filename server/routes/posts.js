@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { test, createPost,updatePost, deletePost,likeDislikePost,viewPost,getTimelinePosts } = require('./../controllers/posts')
+const { test, createPost,updatePost, deletePost,likeDislikePost,viewPost,getTimelinePosts,getUsersPosts } = require('./../controllers/posts')
 
 
 router.get('/',test)
@@ -16,5 +16,7 @@ router.put('/likeDislike/:id',likeDislikePost)
 router.get('/view/:id',viewPost)
 //get timeline posts 
 router.get('/timeline/:userId',getTimelinePosts)
+//getUsersPosts
+router.get('/profile/:username',getUsersPosts)
 
 module.exports = router

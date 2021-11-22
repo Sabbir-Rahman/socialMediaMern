@@ -8,7 +8,7 @@ router.put('/update/:id',updateUser)
 //delete user 
 router.delete('/delete/:id',deleteUser)
 //get a user
-router.get('/:id',viewUser)
+router.get('/view',viewUser)
 //follow a user 
 router.put("/follow/:id",followUser)
 //unfollow a user

@@ -71,13 +71,13 @@ const viewPost = async (req, res) => {
 }
 
 const getTimelinePosts = async (req, res) => {
-    
+    const sortByTimestampDesc = {'_id': -1}
     try {
         const currentUser = await User.findById(req.params.userId)
-        const userPosts = await Post.find({ userId: currentUser._id})
+        const userPosts = await Post.find({ userId: currentUser._id}).sort(sortByTimestampDesc)
         const friendPosts = await Promise.all(
             currentUser.followings.map((friendId)=>{
-                return Post.find({ userId: friendId})
+                return Post.find({ userId: friendId}).sort(sortByTimestampDesc)
             })
         )
         console.log(friendPosts)

@@ -35,6 +35,7 @@ export default function Share() {
         await axios.post("http://localhost:8800/api/v1/posts/create",newPost)
         .then(res => {
             console.log(res)
+            window.location.reload()
         }).catch(error => console.log(error))
     }
     return (

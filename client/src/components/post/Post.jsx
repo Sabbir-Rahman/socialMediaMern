@@ -4,12 +4,19 @@ import {MoreVert} from "@material-ui/icons"
 import axios from "axios"
 import {format} from "timeago.js"
 import { Link } from "react-router-dom"
+import { useContext } from 'react'
+import { AuthContext} from "../../context/AuthContext"
 
 export default function Post({post}) {
     const [like,setLike] = useState(post?.likes.length)
     const [isLiked,setIsLiked] = useState(false)
     const [user,setUser] = useState({})
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
+    const {user:currentUser} = useContext(AuthContext)
+
+    useEffect(()=> {
+        setIsLiked(post?.likes.includes(currentUser._id))
+    },[currentUser._id, post?.likes])
 
     useEffect(()=> {
         
@@ -24,6 +31,12 @@ export default function Post({post}) {
      },[post?.userId])
 
     const likeHandler = () => {
+        
+        axios.put("http://localhost:8800/api/v1/posts/likeDislike/"+post._id,{userId: currentUser._id})
+        .then(res => {
+            console.log(res)
+        }).catch(error => console.log(error))
+
         setLike(isLiked? like-1: like+1)
         setIsLiked(!isLiked)
     }

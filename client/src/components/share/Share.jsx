@@ -19,6 +19,19 @@ export default function Share() {
             description: desc.current.value
         } 
 
+        //uploading file
+        if(file){
+            const data = new FormData();
+            const fileName = Date.now() + file.name;
+            data.append("name",fileName)
+            data.append("file", file)
+            newPost.img = fileName
+            axios.post("http://localhost:8800/api/v1/upload",data)
+            .then(res => {
+                console.log(res)
+            }).catch(error => console.log(error))
+        }
+
         await axios.post("http://localhost:8800/api/v1/posts/create",newPost)
         .then(res => {
             console.log(res)

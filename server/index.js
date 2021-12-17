@@ -4,11 +4,16 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
 const morgan = require('morgan');
+var bodyParser = require('body-parser');
 
 //routes 
 const userRoutes = require('./routes/users')
 const authRoutes = require('./routes/auth')
 const postRoutes = require('./routes/posts')
+const uploadroutes = require('./routes/upload')
+
+//force path for images
+const path = require("path")
 
 dotenv.config()
 
@@ -37,14 +42,21 @@ app.use((req, res, next) => {
     return next();
   });
 
+
+//go to image path directly
+app.use("/images",express.static(path.join(__dirname, "public/images")))
+
 //middleware    
 app.use(express.json())
 app.use(helmet())
 app.use(morgan("common"))
+app.use(bodyParser.urlencoded({extended: false}))
+
 
 app.use("/api/v1/user", userRoutes)
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/posts", postRoutes)
+app.use("/api/v1/upload",uploadroutes)
 
 app.get('/',(req,res) => {
     res.send("Welcome to homepage")

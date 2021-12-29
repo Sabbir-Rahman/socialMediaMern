@@ -7,17 +7,22 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
+import {Add} from "@material-ui/icons"
+import { Link } from "react-router-dom";
 
 export default function Rightbar({user}) {
 
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const {user:currenUser,dispatch} = useContext(AuthContext)
     const [friends,setFriends] = useState([]) 
+    const [followed,setFollowed] = useState(false)
+
+    
 
     useEffect(()=> {
         const getFriends = async () => {
             try {
-                const friendList = await axios.get("http://localhost:8800/api/v1/user/friends/"+ user._id)
+                const friendList = await axios.get("http://localhost:8800/api/v1/user/friends/"+ currenUser._id)
                 setFriends(friendList.data)
                 
             }catch (err) {
@@ -25,8 +30,15 @@ export default function Rightbar({user}) {
             }
         }
         getFriends()
-    }, [user._id])
+    }, [currenUser._id])
 
+    const handleClick = async ()=> {
+        try {
+
+        } catch(err) {
+            console.log(err)
+        }
+    }
     const HomeRightbar = () => {
         return (
             <>
@@ -51,6 +63,11 @@ export default function Rightbar({user}) {
         
         return (
             <>
+                {user.username !== currenUser.username && (
+                    <button className='rightbarFollowingButton' onClick={handleClick}>
+                        Follow<Add/>
+                    </button>
+                )}
                 <h4 className="rightbartitle">User Information</h4>
                 <div className="rightbarInfo">
                     <div className="rightbarInfoItem">
@@ -70,11 +87,13 @@ export default function Rightbar({user}) {
                     <div className="rightbarFollowings">
                         
                         {friends.map((friend)=> (
+                            <Link to={"/profile/"+ friend.username}  style={{ textDecoration: "none" }}>
                             
                             <div className="rightbarFollowing">
                                 <img src={friend.profilePicture ? PF + friend.profilePicture : PF + "person/noAvtar.png"} alt="" className="rightbarFollowingImg"/>
                                 <span className="rightbarFollowingName">{friend.username}</span>
                             </div>
+                            </Link>
                         ))}
                         
                                         

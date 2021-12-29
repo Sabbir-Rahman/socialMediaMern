@@ -6,19 +6,26 @@ import Feed from '../../components/feed/Feed'
 import Rightbar from '../../components/rightbar/Rightbar'
 import Topbar from '../../components/topbar/Topbar'
 import { useParams } from "react-router"
+import { useContext } from 'react'
+import { AuthContext} from "../../context/AuthContext"
 
 export default function Profile() {
 
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     const [user,setUser] = useState({})
     const params = useParams()
-    const username = params.username
     
+    const {user:currentUser} = useContext(AuthContext)
+    const username = params.username
+
     useEffect(()=> {
         
         const fetchUser = async () => {
+            
              const res = await axios.get(`http://localhost:8800/api/v1/user/view?username=${username}`)
+            
              setUser(res.data)
+             
         }
         
         fetchUser()

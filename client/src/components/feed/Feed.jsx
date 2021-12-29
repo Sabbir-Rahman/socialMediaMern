@@ -27,11 +27,11 @@ export default function Feed({username}) {
         <div className="feed">
             
             <div className="feedWrapper">
-                <Share/>
+                {(!username||username === user.username) && <Share/>}
                 {posts.map((p) => (
                     <Post key={p.id} post={p}/>
                 ))}
-                <Post/>
+                
             </div>
         </div>
     )

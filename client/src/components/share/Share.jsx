@@ -1,6 +1,6 @@
 import React from 'react'
 import "./share.css"
-import {PermMedia, Label,Room, EmojiEmotions} from "@material-ui/icons"
+import {PermMedia, Label,Room, EmojiEmotions, Cancel} from "@material-ui/icons"
 import { useContext,useRef } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { useState } from 'react'
@@ -46,6 +46,13 @@ export default function Share() {
                     <input placeholder={`What's in your mind ${user.username}?`} className="shareInput" ref={desc}/>
                 </div>
                 <hr className="shareHr"/>
+                {//showing the file at the time of post
+                file && (
+                    <div className='shareImgContainer'>
+                        <img className="shareImg" src='shareImg' src={URL.createObjectURL(file)} alt=""/>
+                        <Cancel className='shareCancelImg' onClick={() => setFile(null)}/>
+                    </div>
+                )}
                 <form className="shareBottom" onSubmit={submithandler}>
                     <div className="shareOptions">
                         <label htmlFor="file" className="shareOption">

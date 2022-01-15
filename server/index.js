@@ -10,7 +10,9 @@ var bodyParser = require('body-parser');
 const userRoutes = require('./routes/users')
 const authRoutes = require('./routes/auth')
 const postRoutes = require('./routes/posts')
-const uploadroutes = require('./routes/upload')
+const uploadRoutes = require('./routes/upload')
+const conversationRoutes = require('./routes/conversation')
+const messageRoutes = require('./routes/message')
 
 //force path for images
 const path = require("path")
@@ -56,7 +58,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use("/api/v1/user", userRoutes)
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/posts", postRoutes)
-app.use("/api/v1/upload",uploadroutes)
+app.use("/api/v1/upload",uploadRoutes)
+app.use("/api/v1/conversations",conversationRoutes)
+app.use("/api/v1/messages",messageRoutes)
 
 app.get('/',(req,res) => {
     res.send("Welcome to homepage")

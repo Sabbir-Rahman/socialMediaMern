@@ -32,7 +32,6 @@
 }
 
 .chatBoxBottom {
-    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,8 +39,9 @@
 
 .chatMessageInput {
     width: 80%;
-    height: 90px;
+    height: 70px;
     padding: 10px;
+    
 }
 
 .chatSubmitButton {

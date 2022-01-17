@@ -7,14 +7,28 @@ import ChatOnline from "../../components/chatonline/ChatOnline"
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import axios from "axios"
-import { CodeSharp } from "@material-ui/icons"
+import { useRef } from "react"
+import {io} from "socket.io-client"
 
 export default function Messenger() {
     const [conversations,setConversations] = useState([])
     const [currentChat, setCurrentChat] = useState(null)
     const [messages, setMessages] = useState([])
     const [newMessage, setNewMessage] = useState("")
+    const [socket, setSocket] = useState(null)
     const {user} = useContext(AuthContext)
+    const scrollRef = useRef()
+
+    useEffect(()=> {
+        setSocket(io("ws://localhost:8900"))
+    },[])
+
+    useEffect(()=> {
+        //take event from server
+        socket?.on("welcome",message=> {
+            console.log(message)
+        })
+    },[socket])
 
     useEffect(() => {
         const getConversation = async () => {
@@ -40,6 +54,11 @@ export default function Messenger() {
         }
         getMessages()
     }, [currentChat])
+
+    //smooth transition
+    useEffect(()=> {
+        scrollRef.current?.scrollIntoView({ behavior: "smooth"})
+    }, [messages])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -79,9 +98,14 @@ export default function Messenger() {
                      currentChat?
                            <>
                             <div className="chatBoxTop">
-                                {messages.map((m)=> (
-                                    <Message message={m} own={m.sender === user._id}/>
-                                ))}
+                               
+                                    {messages.map((m)=> (
+                                         <div ref={scrollRef}>
+                                            <Message message={m} own={m.sender === user._id}/>     
+                                        </div>
+                    
+                                    ))}
+                                
                             </div>
                             <div className="chatBoxBottom">
                                 <textarea 

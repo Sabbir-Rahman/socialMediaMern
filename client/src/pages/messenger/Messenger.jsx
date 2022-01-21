@@ -15,15 +15,34 @@ export default function Messenger() {
     const [currentChat, setCurrentChat] = useState(null)
     const [messages, setMessages] = useState([])
     const [newMessage, setNewMessage] = useState("")
+    const [arrivalMessage, setArrivalMessage] = useState(null)
     const socket = useRef()
     const {user} = useContext(AuthContext)
     const scrollRef = useRef()
+    let receiverId
 
     useEffect(() => {
-        socket.current = io("ws://localhost:8900")
+        socket.current = io("ws://localhost:8900") 
+        socket.current.on("getMessage", data=> {
+            console.log('Hit')
+            console.log(data)
+                setArrivalMessage({
+                    sender: data.senderId,
+                    text: data.text,
+                    createdAt: Date.now(),
+                })
+                //console.log(arrivalMessage)
+            })
+
     },[])
 
     useEffect(() => {
+        arrivalMessage && currentChat?.members.includes(arrivalMessage.sender) &&
+        setMessages((prev) => [...prev, arrivalMessage])
+    }, [arrivalMessage, currentChat])
+
+    useEffect(() => {
+
         socket.current.emit("addUser", user._id)
         socket.current.on("getUsers", users=> {
             console.log(users)
@@ -60,6 +79,13 @@ export default function Messenger() {
         scrollRef.current?.scrollIntoView({ behavior: "smooth"})
     }, [messages])
 
+    if(currentChat){
+        receiverId = currentChat.members.find(
+            (member) => member !== user._id         
+        )
+    }
+    
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
         const message = {
@@ -67,7 +93,13 @@ export default function Messenger() {
             text: newMessage,
             conversationId: currentChat._id
         }
-
+       
+        socket.current.emit("sendMessage", {
+            senderId: user._id,
+            receiverId ,
+            text: newMessage
+        })
+        
         try {
             const res = await axios.post("http://localhost:8800/api/v1/messages",message)
             setMessages([...messages,res.data])
@@ -75,9 +107,10 @@ export default function Messenger() {
         }catch(err){
             console.log(err)
         }
+        
     }
 
-    console.log(messages)
+
     return (
         <>
             <Topbar/>

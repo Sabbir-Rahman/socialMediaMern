@@ -57,15 +57,13 @@
 .registerBox {
   height: 400px;
   padding: 20px;
-  /* background-color: whtrite; */
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
 }
-.registerRight-heading {
-}
+
 .registerInput {
   height: 50px;
   border-radius: 10px;

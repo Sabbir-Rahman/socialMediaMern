@@ -1,138 +1,231 @@
 .rightBar {
-    flex: 3.5;
+  flex: 3;
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+  position: sticky;
+  top: 50px;
+  background-color: #f5f6f8;
 }
 
 .rightbarWrapper {
-    padding: 20px 20px 0 0;
-
+  padding: 20px 20px 0 0;
 }
 
 .birthdayContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .birthdayImg {
-    width: 32px;
-    height: 32px;
-    margin-right: 10px;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
 }
 
 .birthdayText {
-    font-weight: 300;
-    font-size: 15px;
+  font-weight: 300;
+  font-size: 15px;
 }
 
 .rightbarAd {
-    width: 100%;
-    border-radius: 10px;
-    margin: 30px 0;
+  width: 100%;
+  border-radius: 10px;
+  margin: 30px 0;
 }
 
 .rightbarTitle {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .rightbarFriendList {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .rightbarFriend {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .rightbarProfileImgContainer {
-    margin-right: 10px;
-    position: relative;
-
+  margin-right: 10px;
+  position: relative;
 }
 
-.rightbarProfileImg{
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
+.rightbarProfileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .rightbarOnline {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: limegreen;
-    position: absolute;
-    top: -4px;
-    right: -6px;
-    border: 2px solid white;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: limegreen;
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  border: 2px solid white;
 }
 
 .rightbarUsername {
-    font-weight: 500;
+  font-weight: 500;
 }
 
-
 .rightbarTitle {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .rightbarInfo {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .rightbarInfoItem {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .rightbarInfoKey {
-    font-weight: 500;
-    margin-right: 15px;
-    color: #555;
+  font-weight: 500;
+  margin-right: 15px;
+  color: #555;
 }
 
 .rightbarInfoValue {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .rightbarFollowings {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .rightbarFollowing {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .rightbarFollowingImg {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .rightbarFollowingButton {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border: none;
-    background-color: #1872f2;
-    color: white;
-    border-radius: 5px;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #1872f2;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.rightbarFollowing:focus{
-    outline: none;
+.rightbarFollowing:focus {
+  outline: none;
+}
+.suggested_pages {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+.suggested_pages-heading,
+.suggested_events-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.suggested_pages-heading h3,
+.suggested_events-heading h3 {
+  margin: 1rem 0;
+  color: #999;
+  font-weight: bold;
+}
+.suggested_pages-heading span,
+.suggested_events-heading span {
+  color: #f38b86;
+  font-weight: bold;
+}
+.suggested_pages-1,
+.suggested_pages-2 {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+.suggested_pages-1 img,
+.suggested_pages-2 img {
+  width: 100%;
+  border-radius: 15px;
+}
+.suggested_pages-1 button,
+.suggested_pages-2 button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: bold;
+  padding: 0.4rem;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  background-color: #f6aca8;
+  color: white;
+}
+
+.suggested_events {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 2rem;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+.suggested_events-heading {
+  margin-bottom: -1rem;
+}
+.suggested_events-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.suggested_events-date {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 6px;
+  color: white;
+  border-radius: 18px;
+  font-weight: bold;
+}
+.suggested_events-details {
+  flex: 3;
+}
+.suggested_events-details h4 {
+  color: #333;
+}
+
+.suggested_events-details p {
+  font-size: 12px;
+  color: #888;
 }

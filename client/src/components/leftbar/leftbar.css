@@ -1,76 +1,123 @@
 .leftBar {
-    flex: 3;
-    height: calc(100vh - 50px);
-    overflow-y: scroll;
-    position: sticky;
-    top: 50px;
-    
+  flex: 3;
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+  position: sticky;
+  top: 50px;
+  background-color: #f5f6f8;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(179, 179, 179);
+  background-color: rgb(179, 179, 179);
 }
 
 .leftbarWrapper {
-    padding: 20px;
-   
+  padding: 16px;
 }
 
 .leftbarList {
-    padding: 10px;
-    margin: 0;
-    list-style: none;
+  padding: 20px;
+  background-color: white;
+  margin: 0;
+  list-style: none;
+  border-radius: 10px;
 }
 
 .leftbarListItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .leftbarIcon {
-    margin-right: 15px;
+  margin-right: 15px;
+  padding: 0.6rem;
+  border-radius: 50%;
+  color: white;
+}
+.leftbarListItemText {
+  color: #888;
+  font-weight: bold;
+  cursor: pointer;
+}
+.leftbarListItemText:hover {
+  color: #f38b86;
 }
 
 .leftbarButton {
-    width: 150px;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
-    
+  width: 150px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 .leftbarHr {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .leftbarFriendList {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+.leftbarFriendList p {
+  color: #999;
+  opacity: 0.8;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
 }
 
-.leftbarFriend {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-
+.leftbarBottomListItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.leftbarBottomIcon {
+  margin-right: 15px;
+  font-size: 36px !important;
+  border-radius: 50%;
+  color: #f38b86;
 }
 
-.leftbarFriendImg {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: conver;
-    margin-right: 10px;
-
+/* Icons */
+.leftbarIcon.feed-icon {
+  background-color: #00dbde;
+  background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+}
+.leftbarIcon.video-icon {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+.leftbarIcon.group-icon {
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+}
+.leftbarIcon.bookmark-icon {
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+}
+.leftbarIcon.job-icon {
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+}
+.leftbarIcon.event-icon {
+  background-color: #fa8bff;
+  background-image: linear-gradient(
+    45deg,
+    #fa8bff 0%,
+    #2bd2ff 52%,
+    #2bff88 90%
+  );
 }

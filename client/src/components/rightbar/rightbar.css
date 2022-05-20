@@ -37,7 +37,10 @@
 }
 
 .rightbarTitle {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #f38b86;
+  font-size: 1.3rem !important;
+  font-weight: bold;
 }
 .rightbarFriendList {
   padding: 0;
@@ -90,6 +93,8 @@
 
 .rightbarInfoItem {
   margin-bottom: 10px;
+  font-size: 14px;
+  color: #999;
 }
 
 .rightbarInfoKey {
@@ -105,7 +110,9 @@
 .rightbarFollowings {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 12px;
+  margin: 0.5rem 0;
 }
 
 .rightbarFollowing {
@@ -113,8 +120,19 @@
   flex-direction: column;
   margin-bottom: 20px;
   cursor: pointer;
+  background-color: #eee;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
 }
-
+.rightbarFollowingName {
+  color: #444;
+}
+.rightbarFollowingName:hover {
+  color: #f38b86;
+}
 .rightbarFollowingImg {
   width: 100px;
   height: 100px;
@@ -228,4 +246,38 @@
 .suggested_events-details p {
   font-size: 12px;
   color: #888;
+}
+
+/* Profile Page */
+.rightbarProfileInfo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+.rightbarProfileInfo h4 {
+  margin-bottom: 10px;
+}
+.RightbarFollowingInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.RightbarFollowingInfo-icon {
+  background-color: white;
+  color: #f38b86;
+  padding: 9px 10px;
+  margin-bottom: -1rem;
+}
+.RightbarFollowingInfo > button {
+  color: white;
+  background-color: #f38b86;
+  padding: 10px 30px;
+}
+
+.rightsidebarFollowerList {
+  background-color: white;
+  padding: 20px;
+  margin-top: 2rem;
+  border-radius: 12px;
 }

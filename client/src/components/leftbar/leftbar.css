@@ -90,6 +90,23 @@
   border-radius: 50%;
   color: #f38b86;
 }
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px;
+  margin: 1rem 0;
+  background-color: #f38b86;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.logoutBtn span {
+  font-weight: bold;
+}
 
 /* Icons */
 .leftbarIcon.feed-icon {

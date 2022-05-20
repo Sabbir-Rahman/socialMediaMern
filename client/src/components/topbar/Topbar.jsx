@@ -47,11 +47,11 @@ export default function Topbar() {
           >
             <ListAlt className="topbarLinksIcon" />
           </Link>
-          <Link to="#" style={{ textDecoration: "none" }}>
-            <VideoLibrary className="topbarLinksIcon" />
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <Group className="topbarLinksIcon" />
           </Link>
           <Link to="#" style={{ textDecoration: "none" }}>
-            <Group className="topbarLinksIcon" />
+            <VideoLibrary className="topbarLinksIcon" />
           </Link>
           <Link to="#" style={{ textDecoration: "none" }}>
             <LocalMall className="topbarLinksIcon" />

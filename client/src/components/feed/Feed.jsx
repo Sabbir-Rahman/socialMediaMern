@@ -22,14 +22,14 @@ export default function Feed({ username }) {
     };
 
     fetchPosts();
-  }, [username]);
+  }, [user._id, username]);
 
   return (
     <div className="feed">
       <div className="feedWrapper">
         {(!username || username === user.username) && <Share />}
-        {posts.map((p) => (
-          <Post key={p.id} post={p} />
+        {posts.map((p, index) => (
+          <Post key={index} post={p} />
         ))}
       </div>
     </div>

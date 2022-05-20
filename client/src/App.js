@@ -11,6 +11,7 @@ import Login from "./pages/login/Login";
 import Messenger from "./pages/messenger/Messenger";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
+import Users from "./pages/users/Users";
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/profile/:username">
           <Profile />
+        </Route>
+        <Route path="/users">
+          <Users />
         </Route>
       </Switch>
     </Router>

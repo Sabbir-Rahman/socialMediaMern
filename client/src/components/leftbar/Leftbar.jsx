@@ -3,6 +3,7 @@ import {
   DynamicFeed,
   Event,
   EventAvailableOutlined,
+  ExitToApp,
   Group,
   HomeWorkOutlined,
   LiveTvOutlined,
@@ -15,6 +16,11 @@ import React from "react";
 import "./leftbar.css";
 
 export default function Leftbar() {
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <div className="leftBar">
       <div className="leftbarWrapper">
@@ -68,6 +74,10 @@ export default function Leftbar() {
             <span className="leftbarListItemText ">Market Place</span>
           </li>
         </ul>
+
+        <button className="logoutBtn" onClick={handleLogout}>
+          <ExitToApp /> <span>Logout</span>
+        </button>
       </div>
     </div>
   );

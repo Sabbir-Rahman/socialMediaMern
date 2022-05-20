@@ -1,0 +1,74 @@
+.users_container {
+  display: flex;
+}
+.userList_leftbar {
+  flex: 3;
+}
+.usersList {
+  flex: 12;
+  background-color: #f5f6f8;
+  padding: 40px 120px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.userList-items {
+  display: flex;
+  flex-direction: column;
+  /* width: 400px; */
+  flex: 1;
+  height: 300px;
+  border-radius: 20px;
+}
+.userList_cover {
+  flex: 1;
+  height: 60%;
+}
+.userList_cover_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.userList_profile {
+  flex: 1;
+  position: relative;
+  background-color: white;
+}
+.userList_profile_img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background-color: white;
+  border-radius: 50px;
+  border: 5px solid white;
+}
+
+.userList_profile_info {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 110px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.userListInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.userListName {
+  font-size: 20px;
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+.userListInfo_button {
+  color: white;
+  background-color: #f38b86;
+  padding: 8px 30px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}

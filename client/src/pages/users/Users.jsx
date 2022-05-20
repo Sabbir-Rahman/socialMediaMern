@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Leftbar from "../../components/leftbar/Leftbar";
 import Topbar from "../../components/topbar/Topbar";
 import ProfilePic from "../../images/avatar2.png";
@@ -8,6 +8,7 @@ import CoverPic from "../../images/cover.jpg";
 import "./users.css";
 function Users() {
   const [users, setUsers] = useState([]);
+  const history = useHistory();
   useEffect(() => {
     const fetchUser = async () => {
       const res = await axios.get(`http://localhost:8800/api/v1/user`);
@@ -51,7 +52,14 @@ function Users() {
                       <span className="userListEmail">{user?.email}</span>
                     </div>
                     <div>
-                      <button className="userListInfo_button">Follow</button>
+                      <button
+                        className="userListInfo_button "
+                        onClick={() =>
+                          history.push(`/profile/${user?.username}`)
+                        }
+                      >
+                        Follow
+                      </button>
                     </div>
                   </div>
                 </div>

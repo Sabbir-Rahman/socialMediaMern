@@ -12,12 +12,15 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
 }
 .userList-items {
   display: flex;
   flex-direction: column;
   /* width: 400px; */
-  flex: 1;
+  /* flex: 1; */
   height: 300px;
   border-radius: 20px;
 }

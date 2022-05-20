@@ -4,10 +4,7 @@ import {
   Home,
   ListAlt,
   LocalMall,
-  Notifications,
-  Person,
   Search,
-  VideoLibrary,
 } from "@material-ui/icons";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
@@ -50,8 +47,8 @@ export default function Topbar() {
           <Link to="/users" style={{ textDecoration: "none" }}>
             <Group className="topbarLinksIcon" />
           </Link>
-          <Link to="#" style={{ textDecoration: "none" }}>
-            <VideoLibrary className="topbarLinksIcon" />
+          <Link to="/messenger" style={{ textDecoration: "none" }}>
+            <Chat className="topbarLinksIcon" />
           </Link>
           <Link to="#" style={{ textDecoration: "none" }}>
             <LocalMall className="topbarLinksIcon" />
@@ -60,20 +57,7 @@ export default function Topbar() {
       </div>
 
       <div className="topbarRight">
-        <div className="topbarIcons">
-          <div className="topbarIconItem">
-            <Person />
-            <span className="topbarIconBadge">1</span>
-          </div>
-          <div className="topbarIconItem">
-            <Chat />
-            <span className="topbarIconBadge">1</span>
-          </div>
-          <div className="topbarIconItem">
-            <Notifications />
-            <span className="topbarIconBadge">1</span>
-          </div>
-        </div>
+        <div className="topbarIcons"></div>
         <Link to={`/profile/${user?.username}`}>
           <img
             src={user?.profilePicture ? PF + user.profilePicture : Avatar}

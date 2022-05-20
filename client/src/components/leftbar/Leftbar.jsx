@@ -62,8 +62,16 @@ export default function Leftbar() {
             <span className="leftbarListItemText ">Latest Events</span>
           </li>
           <li className="leftbarBottomListItem">
-            <HomeWorkOutlined className="leftbarBottomIcon" />
-            <span className="leftbarListItemText ">Near Hotel</span>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://cocky-ptolemy-255c17.netlify.app/"
+              className="leftbarBottomListItem"
+              style={{ marginBottom: "-.2rem", textDecoration: "none" }}
+            >
+              <HomeWorkOutlined className="leftbarBottomIcon" />
+              <span className="leftbarListItemText ">Near Restaurants</span>
+            </a>
           </li>
           <li className="leftbarBottomListItem">
             <LiveTvOutlined className="leftbarBottomIcon" />

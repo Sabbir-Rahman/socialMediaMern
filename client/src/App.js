@@ -6,6 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
+import Events from "./pages/events/Events";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Market from "./pages/market/Market";
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route path="/market">
           <Market />
+        </Route>
+        <Route path="/events">
+          <Events />
         </Route>
       </Switch>
     </Router>

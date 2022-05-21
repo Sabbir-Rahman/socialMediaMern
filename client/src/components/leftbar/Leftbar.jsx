@@ -2,20 +2,21 @@ import {
   Bookmark,
   DynamicFeed,
   Event,
-  EventAvailableOutlined,
   ExitToApp,
   Group,
   HomeWorkOutlined,
   LiveTvOutlined,
-  MailOutline,
+  SportsEsportsOutlined,
   StorefrontOutlined,
   VideoLibrary,
   Work,
 } from "@material-ui/icons";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import "./leftbar.css";
 
 export default function Leftbar() {
+  const history = useHistory();
   const handleLogout = () => {
     localStorage.clear();
     window.location.reload();
@@ -25,7 +26,7 @@ export default function Leftbar() {
     <div className="leftBar">
       <div className="leftbarWrapper">
         <ul className="leftbarList">
-          <li className="leftbarListItem">
+          <li className="leftbarListItem" onClick={() => history.push("/")}>
             <DynamicFeed className="leftbarIcon feed-icon" />
             <span className="leftbarListItemText ">Feed</span>
           </li>
@@ -38,6 +39,10 @@ export default function Leftbar() {
             <span className="leftbarListItemText ">Groups</span>
           </li>
           <li className="leftbarListItem">
+            <Event className="leftbarIcon event-icon" />
+            <span className="leftbarListItemText ">Events</span>
+          </li>
+          <li className="leftbarListItem">
             <Bookmark className="leftbarIcon bookmark-icon" />
             <span className="leftbarListItemText ">Bookmarks</span>
           </li>
@@ -45,21 +50,28 @@ export default function Leftbar() {
             <Work className="leftbarIcon job-icon" />
             <span className="leftbarListItemText ">Jobs</span>
           </li>
-          <li className="leftbarListItem">
-            <Event className="leftbarIcon event-icon" />
-            <span className="leftbarListItemText ">Events</span>
-          </li>
         </ul>
         <hr className="leftbarHr" />
         <ul className="leftbarFriendList">
           <p>More Pages</p>
-          <li className="leftbarBottomListItem">
-            <MailOutline className="leftbarBottomIcon" />
-            <span className="leftbarListItemText ">Email Box</span>
+          <li
+            className="leftbarBottomListItem"
+            onClick={() => history.push("/events")}
+          >
+            <Event className="leftbarBottomIcon" />
+            <span className="leftbarListItemText ">Latest Events</span>
           </li>
           <li className="leftbarBottomListItem">
-            <EventAvailableOutlined className="leftbarBottomIcon" />
-            <span className="leftbarListItemText ">Latest Events</span>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://gamesstation.netlify.app/"
+              className="leftbarBottomListItem"
+              style={{ marginBottom: "-.2rem", textDecoration: "none" }}
+            >
+              <SportsEsportsOutlined className="leftbarBottomIcon" />
+              <span className="leftbarListItemText ">Latest Games</span>
+            </a>
           </li>
           <li className="leftbarBottomListItem">
             <a
@@ -78,8 +90,14 @@ export default function Leftbar() {
             <span className="leftbarListItemText ">Live Streams</span>
           </li>
           <li className="leftbarBottomListItem">
-            <StorefrontOutlined className="leftbarBottomIcon" />
-            <span className="leftbarListItemText ">Market Place</span>
+            <a
+              href="/market"
+              className="leftbarBottomListItem"
+              style={{ marginBottom: "-.2rem", textDecoration: "none" }}
+            >
+              <StorefrontOutlined className="leftbarBottomIcon" />
+              <span className="leftbarListItemText ">Market Place</span>
+            </a>
           </li>
         </ul>
 

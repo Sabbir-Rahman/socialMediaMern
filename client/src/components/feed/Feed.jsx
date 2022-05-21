@@ -24,11 +24,15 @@ export default function Feed({ username }) {
     fetchPosts();
   }, [user._id, username]);
 
+  const getSortedPost = (allPosts) => {
+    return allPosts.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  };
+
   return (
     <div className="feed">
       <div className="feedWrapper">
         {(!username || username === user.username) && <Share />}
-        {posts.map((p, index) => (
+        {getSortedPost(posts).map((p, index) => (
           <Post key={index} post={p} />
         ))}
       </div>

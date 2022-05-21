@@ -8,6 +8,7 @@ import {
 import { AuthContext } from "./context/AuthContext";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
+import Market from "./pages/market/Market";
 import Messenger from "./pages/messenger/Messenger";
 import Profile from "./pages/profile/Profile";
 import Register from "./pages/register/Register";
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/users">
           <Users />
+        </Route>
+        <Route path="/market">
+          <Market />
         </Route>
       </Switch>
     </Router>

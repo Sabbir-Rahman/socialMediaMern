@@ -50,7 +50,7 @@ export default function Topbar() {
           <Link to="/messenger" style={{ textDecoration: "none" }}>
             <Chat className="topbarLinksIcon" />
           </Link>
-          <Link to="#" style={{ textDecoration: "none" }}>
+          <Link to="/market" style={{ textDecoration: "none" }}>
             <LocalMall className="topbarLinksIcon" />
           </Link>
         </div>

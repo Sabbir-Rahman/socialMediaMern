@@ -14,9 +14,6 @@ export const ProfileRightBar = ({ user }) => {
     currenUser.followings?.includes(user?.id)
   );
 
-  console.log({ currenUser });
-  console.log("Friends => ", friends);
-  console.log("followed => ", followed);
   useEffect(() => {
     const getFriends = async () => {
       try {
@@ -29,7 +26,7 @@ export const ProfileRightBar = ({ user }) => {
       }
     };
     getFriends();
-  }, [currenUser._id]);
+  }, [currenUser._id, followed]);
 
   const handleClick = async () => {
     try {
@@ -52,12 +49,19 @@ export const ProfileRightBar = ({ user }) => {
     setFollowed(!followed);
   };
 
+  // console.log(user?._id);
+  console.log("current", currenUser);
+
+  const getFollowerStatus = () => {
+    return currenUser.followings?.includes(user?._id);
+  };
+
   return (
     <>
       {user.username !== currenUser.username && (
         <div className="RightbarFollowingInfo">
           <button className="rightbarFollowingButton" onClick={handleClick}>
-            {followed ? "Unfollow" : "Follow"}
+            {getFollowerStatus() ? "Unfollow" : "Follow"}
           </button>
           <MailOutlined className="RightbarFollowingInfo-icon" />
           <MoreHoriz className="RightbarFollowingInfo-icon" />
@@ -91,7 +95,7 @@ export const ProfileRightBar = ({ user }) => {
         </div>
       </div>
       <div className="rightsidebarFollowerList">
-        <p className="rightbarTitle">Followers</p>
+        <p className="rightbarTitle">My Followers</p>
         <div className="rightbarFollowings">
           {friends.map((friend, index) => (
             <Link
